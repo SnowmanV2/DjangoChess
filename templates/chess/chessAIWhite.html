@@ -1,0 +1,8 @@
+{% extends 'chess/chess.html' %}
+{% load static %}
+{% block board %}
+    {% include 'chess/whiteBoard.html' %}
+{% endblock %}
+{% block chessScript %}
+    <script type="module" src="{% static 'chessAI.js' %}"></script>
+{% endblock %}

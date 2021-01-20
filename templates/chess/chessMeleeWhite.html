@@ -1,0 +1,9 @@
+{% extends 'chess/chess.html' %}
+{% load static %}
+{% block board %}
+    {% include 'chess/whiteBoard.html' %}
+{% endblock %}
+{% block chessScript %}
+{#    <script type="module" src="/static/js-cookie/src/js.cookie.js"></script>#}
+    <script type="module" src="{% static 'chessMelee.js' %}"></script>
+{% endblock %}

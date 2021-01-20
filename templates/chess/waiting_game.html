@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess o_O</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    {% csrf_token %}
+    <p>Waiting... plz wait...</p>
+    <script type="module" src="{% static 'js-cookie/src/js.cookie.js' %}"></script>
+    <script src="{% static 'waitRoom.js' %}"></script>
+</body>
+</html>

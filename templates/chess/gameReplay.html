@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Replay</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/replay.css' %}">
+</head>
+<body>
+<header id="pageHeader"></header>
+    <div id="pageLeft"></div>
+    {% include 'chess/whiteBoard.html' %}
+    <div id="pageRight">
+        <div id="game_state"></div>
+    </div>
+    <footer id="pageFooter">
+        <div class="buttonsPanel">
+            <button id="previousButton"><</button><button id="nextButton">></button>
+        </div>
+    </footer>
+    <script type="module" src="{% static 'chessGeneral.js' %}"></script>
+    <script type="module" src="{% static 'replay.js' %}"></script>
+</body>
+</html>

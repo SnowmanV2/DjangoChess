@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "left middle right"
+        "footer footer footer";
+    grid-template-rows: 9fr 15fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: #8dcec3;
+    /*background-color: black;*/
+}
+.pageHeader {
+    grid-area: header;
+    /*background-color: red;*/
+    display: grid;
+    grid-template-areas:
+        "title profile";
+    grid-template-rows: 1fr;
+    grid-template-columns: 3fr 1fr ;
+    grid-gap: 5px;
+    /*background-color: darkorange;*/
+    /*background-color: lightgoldenrodyellow;*/
+    background-color: #d0d09e;
+    border-bottom: 3px outset lightgoldenrodyellow;
+}
+.pageLeft {
+    grid-area: left;
+    display: grid;
+    grid-template-areas:
+        ". ....... ."
+        ". content ."
+        ". ....... .";
+    grid-template-rows: 1fr 1fr 1.25fr;
+    grid-template-columns: 1fr 10fr 1fr;
+}
+.content-button-wrap {
+    grid-area: content;
+    /*background-color: yellow;*/
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+.content-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pageMiddle {
+    grid-area: middle;
+    display: grid;
+    grid-template-areas:
+        ". ....... ."
+        ". content ."
+        ". ....... .";
+    grid-template-rows: 1fr 1fr 1.25fr;
+    grid-template-columns: 1fr 10fr 1fr;
+}
+.pageTitle {
+    grid-area: title;
+    /*background-color: orange;*/
+    display:flex;
+    justify-content: space-between;
+    padding-left: 3%;
+    align-items:center;
+    /*border-right: 3px solid darkorange;*/
+}
+.pageProfile {
+    grid-area: profile;
+    /*border: 5px solid gray;*/
+    padding: 5px 5px;
+    /*border-bottom: 3px solid darkorange;*/
+    /*border-left: 3px solid darkorange;*/
+    /*background-color: orange;*/
+    /*display: grid;*/
+    /*grid-template-areas:*/
+    /*    "login login"*/
+    /*    "button1 button2";*/
+    /*grid-template-rows: 2fr 1fr;*/
+    /*grid-template-columns: 1fr 1fr;*/
+    /*grid-gap: 5px;*/
+}
+#logged, #login {
+     display: grid;
+    grid-template-areas:
+        "login login"
+        "button1 button2";
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+.login {
+    grid-area: login;
+    /*background-color: darkgray;*/
+    display:flex;
+    /*justify-content:center;*/
+    align-items:center;
+}
+.button1 {
+    grid-area: button1;
+    background-color: teal;
+    border: none;
+    color: white;
+    /*padding: 15px 32px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.button2 {
+    grid-area: button2;
+    /*background-color: yellow;*/
+}
+.pageRight {
+    grid-area: right;
+    display: grid;
+    grid-template-areas:
+        ". .......    .......      .......    ."
+        ". content    content      content    ."
+        ". easyButton mediumButton hardButton ."
+        ". .......... ............ .......... .";
+    grid-template-rows: 4fr 4fr 4fr 1fr;
+    grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+    grid-gap: 10px;
+}
+#difficultyEasy {
+    grid-area: easyButton;
+    /*background-color: red;*/
+    visibility: hidden;
+}
+#difficultyMedium {
+    grid-area: mediumButton;
+    /*background-color: orange;*/
+    visibility: hidden;
+
+}
+#difficultyHard {
+    grid-area: hardButton;
+    /*background-color: green;*/
+    visibility: hidden;
+
+}
+.pageFooter {
+    grid-area: footer;
+    background-color: black;
+}
+#login #logged {
+    visibility: hidden;
+    display: inline;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.game-link {
+    line-height: 900%;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+#versusAiButton {
+    background-color: lightgoldenrodyellow;
+    color: black;
+    height: 90%;
+}
+#versusAiButton:hover {
+    background-color: #f3f3c2;
+}
+a.game-link:link, a.game-link:visited  {
+    /*background-color: #f44336;*/
+    background-color: lightgoldenrodyellow;
+      color: black;
+    /*    background-color: darkorange;*/
+        /*color: black;*/
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+}
+/*a:link, a:visited {*/
+/*  background-color: #f44336;*/
+/*  color: white;*/
+/*  padding: 14px 25px;*/
+/*  text-align: center;*/
+/*  text-decoration: none;*/
+/*  display: inline-block;*/
+/*}*/
+
+a.game-link:hover, a.game-link:active #versusAiButton:hover {
+  /*background-color: red;*/
+    background-color: #f3f3c2;
+}
+
+a.auth-link:link, a.auth-link:visited {
+    background-color: teal;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px 25px;
+}
+a.auth-link:hover, a.auth-link:active {
+    background-color: darkcyan;
+}
+.link-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+.auth-link {
+
+}
+button.button1:hover {
+    background-color: darkcyan;
+}
+/*h1 {*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*    padding: 50% 0 50% 0;*/
+/*}*/
+/*h2 {*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*    padding: 50% 0 50% 0;*/
+/*}*/
+h1 {
+    /*font-family: 'Playfair Display SC', serif;*/
+    font-family: 'Alfa Slab One', cursive;
+    /*font-family: 'Great Vibes', cursive;*/
+    font-size: 100px;
+}
+.footerInfo {
+    color: white;
+    font-size: 10px;
+}

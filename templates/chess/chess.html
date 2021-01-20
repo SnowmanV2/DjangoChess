@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% csrf_token %} {# Important thing to ensure Django sets csrf_token in cookies! #}
+    <header id="pageHeader"></header>
+    <div id="pageLeft"></div>
+    {% block board %}{% endblock %}
+{#    {% include 'chess/whiteBoard.html' %}#}
+{#    {% include 'chess/blackBoard.html' %}#}
+    <div id="pageRight">
+        <div id="game_state"></div>
+        <button id="restart_button">Restart</button>
+    </div>
+    <footer id="pageFooter"></footer>
+    <script type="module" src="{% static 'chessGeneral.js' %}"></script>
+{#    <script type="module" src="/static/js-cookie/src/js.cookie.js"></script>#}
+    {% block chessScript %}
+
+    {% endblock %}
+</body>
+</html>

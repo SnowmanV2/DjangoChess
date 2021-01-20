@@ -1,0 +1,133 @@
+body {
+    display: grid;
+    grid-template-areas:
+        "header      header        header"
+        "left-header middle-header right-header"
+        "left        middle        right"
+        "footer      footer        footer";
+    grid-template-rows: 1fr 1fr 5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: #8dcec3;
+    /*background-color: black;*/
+}
+.pageHeader {
+    grid-area: header;
+    display: grid;
+    grid-template-areas:
+            "title     ."
+            "home-link .";
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 10fr;
+}
+.pageTitle {
+    grid-area: title;
+}
+.pageHomeLink {
+    grid-area: home-link;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+.pageLeftHeader {
+    grid-area: left-header;
+}
+.pageMiddleHeader {
+    grid-area: middle-header;
+}
+.pageRightHeader {
+    grid-area: right-header;
+}
+.pageLeft {
+    grid-area: left;
+}
+.pageRight {
+    grid-area: right;
+}
+.pageMiddle {
+    grid-area: middle;
+}
+.pageFooter {
+    grid-area: footer;
+}
+
+a.home-link:link, a.home-link:visited {
+    background-color: teal;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px 25px;
+}
+a.home-link:hover, a.home-link:active {
+    background-color: darkcyan;
+}
+.link-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+h1, h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameInfoContainer {
+    background-color: lightgoldenrodyellow;
+    border: 5px outset lightgoldenrodyellow;
+    margin: 5px;
+    display: grid;
+    grid-template-areas:
+            "id result link"
+            "id result link";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 3fr 2fr;
+}
+.gameId {
+    grid-area: id;
+    display: grid;
+    grid-template-areas:
+            ". ...... ."
+            ". gameId ."
+            ". ...... .";
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+.gameIdContainer {
+    grid-area: gameId;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameResult {
+    grid-area: result;
+    display: grid;
+    grid-template-areas:
+            ". .......... ."
+            ". gameResult ."
+            ". .......... .";
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+.gameResultContainer {
+    grid-area: gameResult;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameLink {
+    grid-area: link;
+    display: grid;
+    grid-template-areas:
+            ". .............. ."
+            ". link-container ."
+            ". .............. .";
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+.gameLinkContainer {
+    grid-area: link-container;
+}

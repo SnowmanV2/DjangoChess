@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+<body>
+<div class="pageHeader">
+    <div class="pageTitle">
+        <h1>{{ username }}</h1>
+    </div>
+    <div class="pageHomeLink">
+        <div class="link-container">
+            <a href="/" class="home-link">Home</a>
+        </div>
+    </div>
+</div>
+<div class="pageLeftHeader">
+    <h2>Hotseat games</h2>
+</div>
+<div class="pageRightHeader">
+    <h2>AI games</h2>
+</div>
+<div class="pageMiddleHeader">
+    <h2>Melee games</h2>
+</div>
+<div class="pageLeft">
+    {% for game in hotseat_games %}
+        <div class="gameInfoContainer">
+            <div class="gameId">
+                <div class="gameIdContainer">
+                    game_id = {{ game.id }}
+                </div>
+            </div>
+            <div class="gameResult">
+                <div class="gameResultContainer">
+                                    Result: {{ game.result }}</div>
+
+                </div>
+            <div class="gameLink">
+                <div class="gameLinkContainer">
+                    <div class="link-container">
+                        <a class="home-link" target="_blank" href="/profile/{{ game.id }}">Replay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+<div class="pageMiddle">
+    {% for game in melee_games %}
+        <div class="gameInfoContainer">
+            <div class="gameId">
+                <div class="gameIdContainer">
+                    game_id = {{ game.id }}
+                </div>
+            </div>
+            <div class="gameResult">
+                <div class="gameResultContainer">
+                                    Result: {{ game.result }}</div>
+
+                </div>
+            <div class="gameLink">
+                <div class="gameLinkContainer">
+                    <div class="link-container">
+                        <a class="home-link" target="_blank" href="/profile/{{ game.id }}">Replay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="pageRight">
+    {% for game in ai_games %}
+        <div class="gameInfoContainer">
+            <div class="gameId">
+                <div class="gameIdContainer">
+                    game_id = {{ game.id }}
+                </div>
+            </div>
+            <div class="gameResult">
+                <div class="gameResultContainer">
+                                    Result: {{ game.result }}</div>
+
+                </div>
+            <div class="gameLink">
+                <div class="gameLinkContainer">
+                    <div class="link-container">
+                        <a class="home-link" target="_blank" href="/profile/{{ game.id }}">Replay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="pageFooter">
+
+</div>
+</body>
+</html>

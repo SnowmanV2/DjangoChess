@@ -1,0 +1,14 @@
+.buttonsPanel {
+    grid-area: buttons;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    width: 25%;
+    background-color: lightgoldenrodyellow;
+    border-color: azure;
+}
+button:hover {
+    background-color: #f3f3c2;
+}

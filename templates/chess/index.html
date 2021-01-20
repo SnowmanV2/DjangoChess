@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chess</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    {% csrf_token %}
+    <div class="pageHeader">
+
+        <div class="pageTitle">
+                <h1>Django Chess</h1>
+
+{#            <h1>That will be chess main page.</h1>#}
+        </div>
+        <div class="pageProfile">
+                <form method="post" action="login" id="login">
+                    {% csrf_token %}
+                    <table class="login">{{ form.as_table }}</table>
+                    <button type="submit" class="button1">Login</button>
+                    <div id="signup" class="auth button2 link-container">
+                        <a href="/signup" class="auth-link">Signup</a>
+                    </div>
+                </form>
+{#                <a href="/login">Login</a>#}
+{#                <div id="signup" class="auth button2">#}
+{#                    <a href="/signup" class="auth-link">Signup</a>#}
+{#                </div>#}
+
+            <div id="logged">
+                <div class="login">
+                    <div style="display:flex;justify-content:center;align-items:center;">
+                        <h2>Welcome, {{ current_user_name }}!</h2>
+                    </div>
+
+                </div>
+                <div id="logout" class="auth button1 link-container">
+                    <a href="/logout" class="auth-link">Logout</a>
+                </div>
+                <div id="profile" class="auth button2 link-container">
+                    <a href="/profile" class="auth-link">Profile</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="pageLeft">
+        <div class="content-button-wrap">
+            <div style="display:flex;justify-content:center;align-items:center;">
+            <a target="_blank" href="/startHotSeat" class="game-link">HotSeat</a>
+            </div>
+        </div>
+    </div>
+    <div class="pageMiddle">
+        <div class="content-button-wrap">
+            <div style="display:flex;justify-content:center;align-items:center;">
+            <a target="_blank" href="/startMelee" class="game-link">Find the game</a>
+            </div>
+        </div>
+    </div>
+    <div class="pageRight">
+        <div class="content-button-wrap">
+            <div id="versusAiButton">
+                <div style="display:flex;justify-content:center;align-items:center;" id="versusAiButton">
+                        Versus AI
+{#                <a target="_blank" href="/startAI" class="game-link">Versus AI</a>#}
+                </div>
+            </div>
+
+        </div>
+        <div id="difficultyEasy">
+            <a target="_blank" href="/startAI/1" class="game-link">Easy</a>
+        </div>
+        <div id="difficultyMedium">
+            <a target="_blank" href="/startAI/2" class="game-link">Medium</a>
+        </div>
+        <div id="difficultyHard">
+            <a target="_blank" href="/startAI/3" class="game-link">Hard</a>
+        </div>
+    </div>
+    <div class="pageFooter">
+        <span class="footerInfo">
+            Шахматы - курсовая работа по дисциплине "Компьютерная графика"<br>
+            Автор: студент гр. 8413 Попков Д.В.<br>
+            РГРТУ, Рязань 2020.
+        </span>
+    </div>
+
+    <script type="application/javascript">
+        let current_user_name = "{{current_user_name}}"
+    </script>
+    <script type="application/ecmascript" src="{% static 'index.js' %}"></script>
+
+</body>
+</html>
